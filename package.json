@@ -1,10 +1,21 @@
 {
   "name": "logseq-booker-plugin",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
+  "version": "0.0.1",
+  "description": "Plugin for Logseq that automatically manages your books",
+  "author": "hepem",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target browser --external @logseq/libs",
+    "dev": "bun run build --watch"
+  },
+  "logseq": {
+    "id": "logseq-booker-plugin",
+    "title": "Booker"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "^1.3.5",
+    "bun-types": "^1.3.5"
   },
   "peerDependencies": {
     "typescript": "^5"
